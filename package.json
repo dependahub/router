@@ -2,10 +2,12 @@
   "name": "@dependahub/router",
   "version": "1.0.0",
   "description": "軽量な関数ルーター",
+  "types": "@types/index.d.ts",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava",
+    "build": "rm -rf @types && tsc"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "homepage": "https://github.com/dependahub/router#readme",
   "devDependencies": {
     "ava": "^6.2.0",
+    "typescript": "^5.8.2",
     "xo": "^0.60.0"
   }
 }

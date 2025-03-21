@@ -1,6 +1,6 @@
 # Router
 
-[![NPM Status](https://img.shields.io/badge/npm-未公開-red.svg)](https://www.npmjs.com/)
+[![NPM Status](https://img.shields.io/badge/npm-public-green.svg)](https://www.npmjs.com/)
 [![Node.js Version](https://img.shields.io/badge/node-20.x-brightgreen.svg)](https://nodejs.org/)
 
 軽量な関数ルーター

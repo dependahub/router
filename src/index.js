@@ -1,15 +1,7 @@
-class RouterError extends Error {
-	statusText = 'UnhandledError';
-	status = 500;
-
-	constructor(message) {
-		super(message);
-		this.name = 'RouterError';
-	}
-}
+import {RouterError} from './errors.js';
 
 class Router {
-	route = {};
+	#route = {};
 
 	/**
 	 * ルートを追加します
@@ -18,14 +10,14 @@ class Router {
 	 * @returns {void}
 	 */
 	add(routeName, callback) {
-		if (this.route[routeName]) {
+		if (this.#route[routeName]) {
 			const error = new RouterError('Route already exists');
 			error.statusText = 'Conflict';
 			error.status = 409;
 			throw error;
 		}
 
-		this.route[routeName] = callback;
+		this.#route[routeName] = callback;
 	}
 
 	/**
@@ -35,7 +27,7 @@ class Router {
 	 * @returns {Promise<any>}
 	 */
 	async post(routeName, payload) {
-		const handler = this.route[routeName];
+		const handler = this.#route[routeName];
 		if (!handler) {
 			const error = new RouterError('Route not found');
 			error.statusText = 'NotFound';
