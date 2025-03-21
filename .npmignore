@@ -1,0 +1,7 @@
+.vscode
+tsconfig.json
+README.md
+LICENSE
+
+**/*.spec.js
+**/*.test.js
