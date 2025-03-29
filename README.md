@@ -28,6 +28,11 @@ const response = await router.post('RouteName', {
 });
 
 console.log(response); // 9
+
+// 登録したルート名一覧を取得
+const routes = router.list();
+
+console.log(routes); // ['RouteName']
 ```
 
 ## ライセンス
