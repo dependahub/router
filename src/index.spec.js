@@ -1,6 +1,17 @@
 import test from 'ava';
 import {router} from './index.js';
 
+test('list', t => {
+	router.add('rotute1', async payload => {
+		const {param} = payload;
+		return param * 3;
+	});
+	const list = router.list();
+	t.deepEqual(list, [
+		'rotute1',
+	]);
+});
+
 test('router', async t => {
 	router.add('RouteName', async payload => {
 		const {param} = payload;

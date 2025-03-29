@@ -4,6 +4,14 @@ class Router {
 	#route = {};
 
 	/**
+	 * ルート名一覧を取得します
+	 * @returns {string[]}
+	 */
+	list() {
+		return Object.keys(this.#route);
+	}
+
+	/**
 	 * ルートを追加します
 	 * @param {string} routeName
 	 * @param {(payload) => Promise<any>} callback
